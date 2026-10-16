@@ -227,22 +227,10 @@
         }
 
         h2 {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
             margin: 0 0 1rem;
             font-size: clamp(1.5rem, 3vw, 1.9rem);
             font-weight: 700;
             line-height: 1.2;
-        }
-
-        h2::before {
-            content: "";
-            flex: none;
-            width: 1.1em;
-            height: 1.1em;
-            border-radius: 50%;
-            background: url("assets/tiles/snakes-medallion.webp") center / cover;
         }
 
         h3 {
@@ -285,10 +273,6 @@
         .schedule-card h2 {
             font-size: 1.2rem;
             margin: 0 0 0.25rem;
-        }
-
-        .schedule-card h2::before {
-            display: none;
         }
 
         .schedule-card p {
@@ -386,7 +370,6 @@
 
         .involved a {
             display: grid;
-            grid-template-columns: 72px 1fr;
             gap: 1rem;
             align-items: center;
             padding: 1.1rem 1.25rem;
@@ -404,9 +387,15 @@
             box-shadow: 0 14px 30px rgba(19, 41, 75, 0.14);
         }
 
-        .involved img {
+        .organisers a {
+            grid-template-columns: 72px 1fr;
+        }
+
+        .organisers img {
             width: 72px;
             height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .involved strong {
@@ -768,15 +757,12 @@
             <h2 id="links">Get Involved</h2>
             <div class="involved">
                 <a href="https://discord.gg/DCNEYDKw9s">
-                    <img src="assets/tiles/bridge-medallion.webp" alt="" width="72" height="72" loading="lazy" />
                     <div><strong>Discord</strong><span>Join the conversation on our Discord server.</span></div>
                 </a>
                 <a href="https://www.meetup.com/python-lisbon-meetup/events/312286589">
-                    <img src="assets/tiles/tower-medallion.webp" alt="" width="72" height="72" loading="lazy" />
                     <div><strong>Meetup.com</strong><span>Find upcoming events and RSVP.</span></div>
                 </a>
                 <a href="assets/python-lisbon-azulejo-pack.zip" download>
-                    <img src="assets/tiles/snakes-medallion.webp" alt="" width="72" height="72" loading="lazy" />
                     <div><strong>Brand pack</strong><span>Download our logos, tiles, stickers and slide templates (ZIP, 21&nbsp;MB).</span></div>
                 </a>
             </div>
@@ -784,17 +770,17 @@
 
         <section aria-labelledby="organisers">
             <h2 id="organisers">Organisers</h2>
-            <div class="involved">
+            <div class="involved organisers">
                 <a href="https://www.linkedin.com/in/tiago-montes/">
-                    <img src="assets/tiles/tram-medallion.webp" alt="" width="72" height="72" loading="lazy" />
+                    <img src="assets/organisers/tiago-montes.jpg" alt="" width="72" height="72" loading="lazy" />
                     <div><strong>Tiago Montes</strong><span>LinkedIn</span></div>
                 </a>
                 <a href="https://www.linkedin.com/in/an%C5%BEe-pe%C4%8Dar-a98b4033">
-                    <img src="assets/tiles/sardine-medallion.webp" alt="" width="72" height="72" loading="lazy" />
+                    <img src="assets/organisers/anze-pecar.jpg" alt="" width="72" height="72" loading="lazy" />
                     <div><strong>Anže Pečar</strong><span>LinkedIn</span></div>
                 </a>
                 <a href="https://www.linkedin.com/in/rodrigo-gir%C3%A3o-serr%C3%A3o">
-                    <img src="assets/tiles/tower-medallion.webp" alt="" width="72" height="72" loading="lazy" />
+                    <img src="assets/organisers/rodrigo-girao-serrao.jpg" alt="" width="72" height="72" loading="lazy" />
                     <div><strong>Rodrigo Girão Serrão</strong><span>LinkedIn</span></div>
                 </a>
             </div>
