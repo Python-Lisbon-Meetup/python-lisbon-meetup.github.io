@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event image builder · Python Lisbon Meetup</title>
+  <meta name="description" content="Create and download Python Lisbon Meetup event images for social media.">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png">
+  <link rel="stylesheet" href="sharing.css">
+  <script src="sharing.js" defer></script>
+</head>
+<body>
+  <header class="hero azulejos">
+    <div class="hero-panel">
+      <a href="/" aria-label="Python Lisbon Meetup home"><img class="hero-logo" src="/assets/tiles/snakes.webp" alt="Python snakes painted on a Portuguese azulejo tile" width="230" height="230"></a>
+      <div>
+        <h1>Python Lisbon <span class="meetup">MEETUP</span></h1>
+        <p class="tagline">Create an image for your next meetup and share it with the community.</p>
+        <a class="button button--secondary" href="/">Back to the community</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="intro"><h2>Event image builder</h2><p>Add the event details, pick a format, and download your image.</p></div>
+    <div class="workspace">
+      <form id="editor" class="panel">
+        <h2>Event details</h2>
+        <label for="title">Title</label><textarea id="title" rows="2" maxlength="180">Python Lisbon Meetup event</textarea>
+        <div class="fields"><div><label for="date">Date</label><input id="date" type="date"></div><div><label for="time">Time</label><input id="time" value="19h" maxlength="40" placeholder="19h"></div></div>
+        <label for="location">Location</label><input id="location" value="IST" maxlength="120">
+        <label for="description">Description <span>(optional)</span></label><textarea id="description" rows="4" maxlength="700" placeholder="Talks, speakers, or anything else people should know…"></textarea>
+        <div class="divider"></div>
+        <label for="format">Image format</label><select id="format"><option value="1080,1080">Square · 1:1 · 1080 × 1080</option><option value="1080,1350">Portrait · 4:5 · 1080 × 1350</option><option value="1080,1920">Story · 9:16 · 1080 × 1920</option><option value="1200,630">Landscape · 1.91:1 · 1200 × 630</option><option value="1920,1080">Widescreen · 16:9 · 1920 × 1080</option></select>
+        <label for="corner">Logo corner</label><select id="corner"><option value="top-right">Top right</option><option value="top-left">Top left</option><option value="bottom-right">Bottom right</option><option value="bottom-left">Bottom left</option></select>
+        <label for="font-scale">Font size <output id="font-scale-value" for="font-scale">100% (default)</output></label>
+        <input id="font-scale" type="range" min="75" max="150" step="25" value="100" aria-describedby="font-scale-help">
+        <p id="font-scale-help" class="note">Scale all text together: 75%, 100%, 125%, or 150%. Long text automatically shrinks to fit.</p>
+        <button id="download" type="button" disabled>Download PNG <span aria-hidden="true">↓</span></button>
+      </form>
+      <section class="preview-panel" aria-labelledby="preview-title"><div class="preview-heading"><h2 id="preview-title">Live preview</h2><span id="dimensions">1080 × 1080 px</span></div><div class="preview-stage"><canvas id="preview" width="1080" height="1080" role="img" aria-label="Preview of your event image"></canvas></div><p id="status" class="note" role="status">Loading fonts and artwork…</p></section>
+    </div>
+  </main>
+  <footer><div class="footer-band azulejos" aria-hidden="true"></div><div class="footer-text"><p>Python, people, and a little Lisbon.</p><p><a href="/">Python Lisbon Meetup</a></p></div></footer>
+</body>
+</html>
