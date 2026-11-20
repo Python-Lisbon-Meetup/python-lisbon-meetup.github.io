@@ -307,6 +307,46 @@
             border: 2px solid var(--yellow);
         }
 
+        .event-card--upcoming {
+            border: 2px solid var(--accent);
+        }
+
+        /* the whole card is clickable via the title link */
+        .event-card {
+            position: relative;
+        }
+
+        .event-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .event-link::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+        }
+
+        .event-card:hover .event-link {
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+        }
+
+        .event-link:focus-visible {
+            outline: none;
+        }
+
+        .event-card:has(.event-link:focus-visible) {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .event-badge.event-badge--upcoming {
+            background: var(--accent);
+            color: var(--card-bg);
+        }
+
         .event-head {
             display: flex;
             align-items: center;
@@ -518,7 +558,7 @@
                 <div class="actions">
                     <a class="button button--primary" href="https://discord.gg/DCNEYDKw9s">Join our Discord</a>
                     <a class="button button--secondary"
-                        href="https://www.meetup.com/python-lisbon-meetup/events/312286589">Upcoming events</a>
+                        href="https://www.meetup.com/python-lisbon-meetup/events/">Upcoming events</a>
                 </div>
             </div>
         </div>
@@ -555,17 +595,47 @@
         <section aria-labelledby="history">
             <h2 id="history">Meetup History</h2>
             <p class="prose">
-                A running archive of past Python Lisbon Meetup sessions.
+                Our next meetup, plus a running archive of past Python Lisbon Meetup sessions.
             </p>
             <div class="event-grid">
+                <article class="event-card">
+                    <div class="event-head">
+                        <img class="event-tile" src="assets/tiles/saldanha-medallion.webp" alt="" width="56" height="56" loading="lazy" />
+                        <span class="event-number" aria-hidden="true">#15</span>
+                    </div>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/317505097/"><span class="visually-hidden">#15 - </span>Python Lisbon Meetup at Gapstars ✨</a></h3>
+                    <dl class="event-details">
+                        <div><dt>Date</dt><dd><time datetime="2026-12-03">December 3, 2026</time></dd></div>
+                        <div><dt>Main talk</dt><dd>How I Learned to Stop Worrying and Love the Robot: How to tell if your AI builds slop without reading every line</dd></div>
+                        <div><dt>Speaker</dt><dd>Ilya Dorman</dd></div>
+                        <div><dt>Host</dt><dd>Gapstars</dd></div>
+                        <div><dt>Location</dt><dd>Gapstars, Edifício Atrium Saldanha (11th floor)</dd></div>
+                    </dl>
+                </article>
+
+                <article class="event-card event-card--special">
+                    <div class="event-head">
+                        <img class="event-tile" src="assets/tiles/van-medallion.webp" alt="" width="56" height="56" loading="lazy" />
+                        <span class="event-number" aria-hidden="true">#14</span>
+                    </div>
+                    <p class="event-badge">Joint with PyData Lisbon</p>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/317086731/"><span class="visually-hidden">#14 - </span>Python Lisbon Meetup at VW Innovation &amp; Engineering Hub</a></h3>
+                    <dl class="event-details">
+                        <div><dt>Date</dt><dd><time datetime="2026-11-05">November 5, 2026</time></dd></div>
+                        <div><dt>Talks</dt><dd>How to Accept That AI Writes Better Python Code Than You Do</dd><dd>Harnessing Pydantic AI for Offensive Security</dd></div>
+                        <div><dt>Speakers</dt><dd>Anže Pečar, Miguel Cardoso</dd></div>
+                        <div><dt>Host</dt><dd>VW Innovation &amp; Engineering Hub</dd></div>
+                        <div><dt>Location</dt><dd>VWGS Portugal, R. Luz Soriano 67</dd></div>
+                    </dl>
+                </article>
                 <article class="event-card">
                     <div class="event-head">
                         <img class="event-tile" src="assets/tiles/ist-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#13</span>
                     </div>
-                    <h3><span class="visually-hidden">#13 - </span>Python Lisbon Meetup at Técnico</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/316776712/"><span class="visually-hidden">#13 - </span>Python Lisbon Meetup at Técnico</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>October 1, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-10-01">October 1, 2026</time></dd></div>
                         <div><dt>Speaker</dt><dd>Tiago Montes</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico (Sala Multiusos, Torre Norte)</dd></div>
                     </dl>
@@ -579,7 +649,7 @@
                     <p class="event-badge">Special meetup</p>
                     <h3><span class="visually-hidden">#12 - </span>PyLM Meetup at PyCon Portugal 2026 🐍</h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>September 3, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-09-03">September 3, 2026</time></dd></div>
                         <div><dt>Event</dt><dd>PyCon Portugal 2026</dd></div>
                         <div><dt>Location</dt><dd>Aveiro</dd></div>
                     </dl>
@@ -590,9 +660,9 @@
                         <img class="event-tile" src="assets/tiles/cafe-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#11</span>
                     </div>
-                    <h3><span class="visually-hidden">#11 - </span>PyLM Meetup</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/315711024/"><span class="visually-hidden">#11 - </span>PyLM Meetup</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>August 6, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-08-06">August 6, 2026</time></dd></div>
                         <div><dt>Main activity</dt><dd>Socialising and grabbing a drink</dd></div>
                         <div><dt>Location</dt><dd>Café Linha d'Água</dd></div>
                     </dl>
@@ -603,9 +673,9 @@
                         <img class="event-tile" src="assets/tiles/cafe-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#10</span>
                     </div>
-                    <h3><span class="visually-hidden">#10 - </span>PyLM Meetup</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/315420890/"><span class="visually-hidden">#10 - </span>PyLM Meetup</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>July 2, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-07-02">July 2, 2026</time></dd></div>
                         <div><dt>Main activity</dt><dd>Socialising and grabbing a drink</dd></div>
                         <div><dt>Location</dt><dd>Café Linha d'Água</dd></div>
                     </dl>
@@ -616,9 +686,9 @@
                         <img class="event-tile" src="assets/tiles/saldanha-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#09</span>
                     </div>
-                    <h3><span class="visually-hidden">#09 - </span>PyLM Meetup</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/314171749/"><span class="visually-hidden">#09 - </span>PyLM Meetup</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>June 4, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-06-11">June 11, 2026</time></dd></div>
                         <div><dt>Main talk</dt><dd>Supply Chain Attacks</dd></div>
                         <div><dt>Speaker</dt><dd>Anže Pečar</dd></div>
                         <div><dt>Host</dt><dd>Gapstars</dd></div>
@@ -631,9 +701,9 @@
                         <img class="event-tile" src="assets/tiles/ist-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#08</span>
                     </div>
-                    <h3><span class="visually-hidden">#08 - </span>PyLM Meetup at Técnico 🎓🐍</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/314097850/"><span class="visually-hidden">#08 - </span>PyLM Meetup at Técnico 🎓🐍</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>May 7, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-05-07">May 7, 2026</time></dd></div>
                         <div><dt>Main talk</dt><dd>Strong Ref, Weak Ref, and Garbage Collector Walk Into a Bar</dd></div>
                         <div><dt>Speaker</dt><dd>Yulia Markelova</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -645,9 +715,9 @@
                         <img class="event-tile" src="assets/tiles/ist-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#07</span>
                     </div>
-                    <h3><span class="visually-hidden">#07 - </span>PyLM Meetup at Técnico 🎓🐍</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/313903112/"><span class="visually-hidden">#07 - </span>PyLM Meetup at Técnico 🎓🐍</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>April 2, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-04-02">April 2, 2026</time></dd></div>
                         <div><dt>Main talk</dt><dd>Speed Up Your Startup Times with Lazy Imports</dd></div>
                         <div><dt>Speaker</dt><dd>Anže Pečar</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -659,9 +729,9 @@
                         <img class="event-tile" src="assets/tiles/ist-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#06</span>
                     </div>
-                    <h3><span class="visually-hidden">#06 - </span>PyLM Meetup at Técnico 🎓🐍</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/313555982/"><span class="visually-hidden">#06 - </span>PyLM Meetup at Técnico 🎓🐍</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>March 5, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-03-05">March 5, 2026</time></dd></div>
                         <div><dt>Main talk</dt><dd>TBA</dd></div>
                         <div><dt>Speaker</dt><dd>Dima Burmistrov</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -673,9 +743,9 @@
                         <img class="event-tile" src="assets/tiles/ist-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#05</span>
                     </div>
-                    <h3><span class="visually-hidden">#05 - </span>PyLM Meetup at Técnico 🎓🐍</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/313187375/"><span class="visually-hidden">#05 - </span>PyLM Meetup at Técnico 🎓🐍</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>February 5, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-02-05">February 5, 2026</time></dd></div>
                         <div><dt>Main talk</dt><dd>TBA</dd></div>
                         <div><dt>Speaker</dt><dd>Tiago Montes</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -687,9 +757,9 @@
                         <img class="event-tile" src="assets/tiles/ist-medallion.webp" alt="" width="56" height="56" loading="lazy" />
                         <span class="event-number" aria-hidden="true">#04</span>
                     </div>
-                    <h3><span class="visually-hidden">#04 - </span>PyLM Meetup at Técnico 🎓🐍</h3>
+                    <h3><a class="event-link" href="https://www.meetup.com/python-lisbon-meetup/events/312286589/"><span class="visually-hidden">#04 - </span>PyLM Meetup at Técnico 🎓🐍</a></h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>January 8, 2026</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2026-01-08">January 8, 2026</time></dd></div>
                         <div><dt>Main talk</dt><dd>TBA</dd></div>
                         <div><dt>Speaker</dt><dd>Diogo Rosa</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -703,7 +773,7 @@
                     </div>
                     <h3><span class="visually-hidden">#03 - </span>PyLM Meetup at Técnico</h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>December 4, 2025</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2025-12-04">December 4, 2025</time></dd></div>
                         <div><dt>Main talk</dt><dd>TBA</dd></div>
                         <div><dt>Speaker</dt><dd>Teresa Cutelo</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -717,7 +787,7 @@
                     </div>
                     <h3><span class="visually-hidden">#02 - </span>PyLM Meetup at Técnico</h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>November 6, 2025</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2025-11-06">November 6, 2025</time></dd></div>
                         <div><dt>Main talk</dt><dd>A generator, duck typing, and a branchless conditional walk into a bar</dd></div>
                         <div><dt>Speaker</dt><dd>Rodrigo Girão Serrão</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -731,7 +801,7 @@
                     </div>
                     <h3><span class="visually-hidden">#01 - </span>PyLM Meetup at Técnico</h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>October 2, 2025</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2025-10-02">October 2, 2025</time></dd></div>
                         <div><dt>Main talk</dt><dd>Free-threaded Python</dd></div>
                         <div><dt>Speaker</dt><dd>Anže Pečar</dd></div>
                         <div><dt>Location</dt><dd>Instituto Superior Técnico</dd></div>
@@ -745,7 +815,7 @@
                     </div>
                     <h3><span class="visually-hidden">#00 - </span>PyLM Meetup</h3>
                     <dl class="event-details">
-                        <div><dt>Date</dt><dd>September 4, 2025</dd></div>
+                        <div><dt>Date</dt><dd><time datetime="2025-09-04">September 4, 2025</time></dd></div>
                         <div><dt>Main activity</dt><dd>Socialising and grabbing a drink</dd></div>
                         <div><dt>Location</dt><dd>Café Linha d'Água</dd></div>
                     </dl>
@@ -759,7 +829,7 @@
                 <a href="https://discord.gg/DCNEYDKw9s">
                     <div><strong>Discord</strong><span>Join the conversation on our Discord server.</span></div>
                 </a>
-                <a href="https://www.meetup.com/python-lisbon-meetup/events/312286589">
+                <a href="https://www.meetup.com/python-lisbon-meetup/events/">
                     <div><strong>Meetup.com</strong><span>Find upcoming events and RSVP.</span></div>
                 </a>
                 <a href="assets/python-lisbon-azulejo-pack.zip" download>
@@ -841,6 +911,26 @@
             </p>
         </div>
     </footer>
+    <script>
+        // Mark meetups that haven't happened yet as "Upcoming · RSVP", based on each
+        // card's <time datetime="YYYY-MM-DD">. An event stays upcoming through its own
+        // day (Lisbon time), so nobody has to remember to update the site afterwards.
+        // Add ?today=YYYY-MM-DD to the URL to preview another day.
+        (function () {
+            var override = new URLSearchParams(location.search).get("today");
+            var today = /^\d{4}-\d{2}-\d{2}$/.test(override || "") ? override
+                : new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Lisbon" }).format(new Date());
+            document.querySelectorAll(".event-card").forEach(function (card) {
+                var time = card.querySelector("time[datetime]");
+                if (!time || time.getAttribute("datetime") < today) return;
+                card.classList.add("event-card--upcoming");
+                var badge = document.createElement("p");
+                badge.className = "event-badge event-badge--upcoming";
+                badge.textContent = "Upcoming · RSVP";
+                card.insertBefore(badge, card.querySelector(".event-badge, h3"));
+            });
+        })();
+    </script>
 </body>
 
 </html>
