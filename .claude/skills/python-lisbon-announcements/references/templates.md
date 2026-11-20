@@ -9,7 +9,8 @@ Every example below comes from event #15 (3 December 2026, Gapstars, one talk by
 4. X / Twitter
 5. Mastodon
 6. Discord
-7. Optional paragraphs (joint event, image consent, end time)
+7. Email to the old meetup group (plain text)
+8. Optional paragraphs (joint event, image consent, end time)
 
 ---
 
@@ -153,7 +154,39 @@ Got something you can show in 5 minutes? Bring a lightning talk! ⚡
 See you there! 👋
 ```
 
-## 7. Optional paragraphs
+## 7. Email to the old meetup group (plain text)
+
+The old group's members get a short, friendly email in plain text. Use English only, with no Markdown, no Unicode bold and a bare URL. Emoji start the date, place, talks and RSVP lines. Suggested subject: "Python Lisbon Meetup #15: 3 December at Gapstars".
+
+```
+Olá everyone! 👋
+
+The Python Lisbon Meetup is back at Gapstars this month, and we'd love to see you there!
+
+📅 December 3, 18:30
+📍 Gapstars, Edifício Atrium Saldanha (11th floor), Lisbon
+
+🎤 Talk:
+Ilya Dorman — How I Learned to Stop Worrying and Love the Robot: How to tell if your AI builds slop without reading every line
+
+Plus one or more lightning talks ⚡ There will also be drinks, snacks, and time to hang out and chat after the talks.
+
+👉 RSVP here:
+https://www.meetup.com/python-lisbon-meetup/events/317505097/
+
+See you there!
+```
+
+How #14 differed (a joint event with two talks, food, and filming):
+- Opening line: "Python Lisbon Meetup and PyData Lisbon are co-hosting a meetup, and we'd love to see you there!"
+- Place with the neighbourhood: "📍 VW Innovation & Engineering Hub, Rato, Lisbon"
+- "🎤 Two talks lined up:", then one "Speaker — Title" line per talk
+- "There will also be food, drinks, and time to hang out and chat after the talks."
+- The English image-consent paragraph from section 8 (with the 📸 but without the bold), between the talks and the RSVP link
+
+Rules: date as "Month D, HH:MM" with no weekday. Talks as "Speaker — Title" with an em dash, and the title in the same case as on the Meetup page. Mention food or drinks only if the host has confirmed them, and lightning talks only if the event has them.
+
+## 8. Optional paragraphs
 
 **Joint event** (from #14):
 > This month we're joining forces with [PyData Lisbon](https://www.meetup.com/pydata-lisbon/) at the **VW Innovation & Engineering Hub**, who are kindly hosting us, with food and drinks! 🍕
